@@ -1,0 +1,24 @@
+{
+  "name": "task-tracker-cli-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayupandey12/Task-tracker-cli-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ayupandey12/Task-tracker-cli-app/issues"
+  },
+  "homepage": "https://github.com/ayupandey12/Task-tracker-cli-app#readme",
+  "dependencies": {
+    "node": "^26.3.0"
+  }
+}
