@@ -20,5 +20,8 @@
   "homepage": "https://github.com/ayupandey12/Task-tracker-cli-app#readme",
   "dependencies": {
     "node": "^26.3.0"
+  },
+  "bin": {
+    "mycli":"./index.js"
   }
 }
