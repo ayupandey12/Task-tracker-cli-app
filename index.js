@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import path from "node:path";
 import * as fs from 'node:fs';
-import { todo } from "node:test";
+
 const p =path.join(import.meta.dirname,'./ap.json');
 const d1=fs.readFileSync(p,'utf8');
 const todos=d1?JSON.parse(d1):[];
