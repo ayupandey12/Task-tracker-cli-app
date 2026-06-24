@@ -59,7 +59,7 @@ function findlist({findwithprogress})
  }
 
 }
-const d=process.argv.filter((i)=>{return !i.startsWith('C')})
+const d=process.argv.slice(2)
 const f=d[0];
 const workon=d[1]||"";
 const v=d[2]||"";
