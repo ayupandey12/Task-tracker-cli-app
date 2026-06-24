@@ -97,10 +97,12 @@ switch (f) {
         updateprogress({id:Number(workon),progress:f});
         break;
     case "list":
-        {
-           findlist({findwithprogress:workon})
-        }
+        
+        findlist({findwithprogress:workon})
+        break;
+
     default:
+        console.log("something is worng!")
         break;
 }
 fs.writeFileSync(p,JSON.stringify(todos),'utf8');
