@@ -12,6 +12,7 @@ function addtodo({todo}) //add todo
   const newtodo={
     id:preid+1,
     description:todo,
+    progress:"todo",
     createdAt:Date.now(),
     updatedAt:Date.now()
   }
@@ -30,6 +31,33 @@ function deletetodo({id})
 { const i=todos.filter((t)=>{return t.id!==id});
   todos.length=0;
   todos.push(...i); 
+}
+function updateprogress({id,progress})
+{
+ const u=todos.filter((t)=>{return t.id===id});
+ if(u.length===0)
+ {
+    console.log("id not found");
+    return ;
+ }
+ if(progress==="mark-inprogress")
+ {
+    u[0].progress="inprogress";
+ }
+ else u[0].progress="done";
+}
+function findlist({findwithprogress})
+{ 
+ if(findwithprogress==="") 
+ {
+   console.log(todos);
+ }
+ else {
+    const u=todos.filter((t)=>{return t.progress===findwithprogress})
+    console.log(u);
+    
+ }
+
 }
 const d=process.argv.filter((i)=>{return !i.startsWith('C')})
 const f=d[0];
@@ -59,8 +87,20 @@ switch (f) {
         }
         deletetodo({id:Number(workon)});
         break;
+    case "mark-inprogress":
+    case "mark-done":
+        if(workon=="") 
+        {
+            console.log("invalid id ");
+            break;
+        }
+        updateprogress({id:Number(workon),progress:f});
+        break;
+    case "list":
+        {
+           findlist({findwithprogress:workon})
+        }
     default:
         break;
 }
 fs.writeFileSync(p,JSON.stringify(todos),'utf8');
-console.log(d,p,todos)
